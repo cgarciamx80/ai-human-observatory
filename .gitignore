@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Obsidian
+.obsidian/
+.trash/
+
+# ChatGPT export data — personal, never commit
+inventory_report.md
+data/
+exports/
+__pycache__/
+*.pyc
