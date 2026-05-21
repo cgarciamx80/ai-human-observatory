@@ -3,7 +3,7 @@ observation_id: 006
 type: observation
 status: documented
 date: 2026-05-14
-observer: Carlos Holguin
+observer: Carlos García
 source: Claude.ai late-night philosophical conversation
 domain: ai-human-interaction, cognition, theory-of-mind
 tags: [theory-of-mind, asymmetry, reciprocity-illusion, anthropomorphism, modeling-bias]

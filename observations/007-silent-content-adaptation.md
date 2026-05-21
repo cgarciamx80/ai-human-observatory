@@ -3,7 +3,7 @@ observation_id: 007
 type: observation
 status: documented
 date: 2026-05-15
-observer: Carlos Holguin
+observer: Carlos García
 source: Claude Code live session — observatory repo creation task
 domain: ai-human-interaction, ai-collaboration, content-integrity
 tags: [silent-adaptation, editorial-decisions, disclosure-gap, content-integrity, collaboration-pattern]

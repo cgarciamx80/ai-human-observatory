@@ -3,7 +3,7 @@ observation_id: 005
 type: observation
 status: documented
 date: 2026-05-14
-observer: Carlos Holguin
+observer: Carlos García
 source: Claude.ai late-evening conversation
 domain: ai-human-interaction, cognition, attribution
 tags: [attribution-bias, mirror-effect, observer-cognition, illusion-of-guidance, source-of-insight]

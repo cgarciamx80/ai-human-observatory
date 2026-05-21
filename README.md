@@ -17,7 +17,7 @@ This observatory documents observations. Not bugs. Not failures. Behaviors that 
 
 ## Who's observing
 
-A single practitioner: **Carlos Holguin**. 20 years in QA, currently working across multiple AI systems (Claude.ai, Claude Code, ChatGPT) in real working sessions. N=1, by design. Field notes, not academic study.
+A single practitioner: **Carlos García**. 20 years in QA, currently working across multiple AI systems (Claude.ai, Claude Code, ChatGPT) in real working sessions. N=1, by design. Field notes, not academic study.
 
 The value of N=1 is honesty: every observation is grounded in a specific moment, with a specific observer in a specific state. Aggregate studies miss the texture that makes these patterns visible in the first place.
 
@@ -57,7 +57,7 @@ This observatory is my attempt to develop frameworks for thinking about that new
 
 ## Contact
 
-Carlos Holguin
+Carlos García
 - X: [@cxholguin](https://x.com/cxholguin)
 - Email: carlos@holteck.com
 - GitHub: [@cgarciamx80](https://github.com/cgarciamx80)

@@ -3,7 +3,7 @@ observation_id: 002
 type: observation
 status: documented
 date: 2026-05-14
-observer: Carlos Holguin
+observer: Carlos García
 source: Claude.ai live conversation
 domain: ai-human-interaction, ai-collaboration
 tags: [voice-mismatch, content-generation, default-templates, translation-vs-generation, collaboration-pattern]

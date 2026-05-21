@@ -3,7 +3,7 @@ observation_id: 003
 type: observation
 status: documented
 date: 2026-05-14
-observer: Carlos Holguin
+observer: Carlos García
 source: Claude.ai and Claude Code conversations (last ~5 days)
 domain: ai-human-interaction
 tags: [state-detection, paternalism, prescription, calibration, signal-vs-noise, false-positive]

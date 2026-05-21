@@ -3,7 +3,7 @@ observation_id: 001
 type: observation
 status: documented
 date: 2026-05-14
-observer: Carlos Holguin
+observer: Carlos García
 source: Claude.ai live conversation
 domain: ai-human-interaction
 tags: [prescription, closing-turn, calibration, performance-of-care, human-detection]

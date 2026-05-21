@@ -58,4 +58,4 @@ It is field notes. The medium is markdown. The pace is "when something is notice
 
 If you reference observations from this repository, please attribute:
 
-> Holguin, Carlos. *AI-Human Interaction Observatory*. https://github.com/cgarciamx80/ai-human-observatory
+> García, Carlos. *AI-Human Interaction Observatory*. https://github.com/cgarciamx80/ai-human-observatory
