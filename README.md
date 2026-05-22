@@ -58,7 +58,7 @@ This observatory is my attempt to develop frameworks for thinking about that new
 ## Contact
 
 Carlos García
-- Email: connect@holteck.com
+- Email: carlos@holteck.com
 - GitHub: [@cgarciamx80](https://github.com/cgarciamx80)
 
 ## License
