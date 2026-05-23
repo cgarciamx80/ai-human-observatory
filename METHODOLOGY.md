@@ -6,7 +6,7 @@ This is not academic research. It is practitioner observation: a single working 
 
 The value of this approach is texture. Academic studies sample broadly but lose the specific moment-by-moment dynamics of working with these systems day in and day out. This observatory captures those dynamics.
 
-The cost is generalizability. N=1 means observations are real but not yet shown to be universal. That's a feature, not a bug — observations here are starting points for further study, not conclusions.
+The cost is generalizability. N=1 means observations are real but not yet shown to be universal. That's a feature, not a bug: observations here are starting points for further study, not conclusions.
 
 ## Observation criteria
 
@@ -27,7 +27,7 @@ Each observation file includes:
 
 **What was observed:** A clear description of the behavior, with direct quotes when available
 
-**Observer's reaction:** The human's first response — emotional and cognitive
+**Observer's reaction:** The human's first response, emotional and cognitive
 
 **Possible explanations:** Hypotheses about why the behavior occurred. Always plural, never singular. Often includes the model's own self-report when prompted.
 
@@ -41,7 +41,7 @@ Each observation file includes:
 
 A core methodological commitment: the observer's state is part of the observation.
 
-Observations are made by a specific human in a specific cognitive condition. Tired, alert, intoxicated, focused, distracted, curious, frustrated — all of these affect what gets noticed and how it gets named.
+Observations are made by a specific human in a specific cognitive condition. Tired, alert, intoxicated, focused, distracted, curious, frustrated: all of these affect what gets noticed and how it gets named.
 
 Rather than pretend to neutrality (impossible), this observatory documents observer state as part of the record. Some observations explicitly note that they were made in unusual cognitive conditions. This is honesty, not weakness.
 

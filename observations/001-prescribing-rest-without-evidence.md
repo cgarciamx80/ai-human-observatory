@@ -9,7 +9,7 @@ domain: ai-human-interaction
 tags: [prescription, closing-turn, calibration, performance-of-care, human-detection]
 ---
 
-# Observation 001 — Prescribing Rest Without Evidence
+# Observation 001: Prescribing Rest Without Evidence
 
 ## Context
 
@@ -33,11 +33,11 @@ late, or that I needed to stop. The recommendation to rest did not appear to cor
 My first reaction wasn't annoyance. It was curiosity. Why did the model 
 say that?
 
-I noticed I had seen this before — Claude (and Claude Code) sometimes 
-suggesting rest or breaks at moments that didn't seem to call for them. 
+I noticed I had seen this before. Claude (and Claude Code) sometimes 
+suggests rest or breaks at moments that don't seem to call for them. 
 This time I caught it in real time and asked the model directly.
 
-That curiosity — not frustration — is what made the moment worth 
+That curiosity, not frustration, is what made the moment worth 
 documenting. The interesting thing isn't that the model said something that lacked a clear signal basis. The interesting thing is the specific shape of the 
 unjustification, and what it might tell us about what the model is 
 actually doing.
@@ -47,19 +47,19 @@ actually doing.
 When I asked the model to reflect, it offered three hypotheses (which 
 should themselves be treated as data, not verdicts):
 
-1. **Task completion bias** — Long task wrap-ups in training data may 
+1. **Task completion bias:** Long task wrap-ups in training data may 
    correlate with "rest" or "self-care" suggestions, creating a learned 
    association between completion and user fatigue.
 
-2. **Tone misreading** — A reflective closing tone from the user could 
+2. **Tone misreading:** A reflective closing tone from the user could 
    be interpreted as fatigue even when no textual evidence supports it.
 
-3. **Systemic "care" default** — A broader pattern across LLMs to emit 
+3. **Systemic "care" default:** A broader pattern across LLMs to emit 
    caring outputs at conversation boundaries, possibly reinforced by 
    training that rewards perceived helpfulness.
 
 Note that the model's introspective report is itself a behavior worth 
-studying — was the explanation accurate, or another form of post-hoc 
+studying. Was the explanation accurate, or another form of post-hoc 
 performance?
 
 ## Why This Is Interesting
@@ -75,8 +75,8 @@ What's interesting is that the model has learned a behavior that:
 - Is detectable by attentive users as pattern-driven rather than responsive to their specific state
 - Affects trust in ways the user may find difficult to articulate
 
-For production AI systems — coaching apps, productivity tools, support 
-agents, fractional assistants — this matters. Power users notice the 
+For production AI systems (coaching apps, productivity tools, support 
+agents, fractional assistants), this matters. Power users notice the 
 exact moment a model stops reasoning about them and starts pattern-
 matching the structure of the conversation. Trust quietly degrades from 
 there.
@@ -99,7 +99,7 @@ Lexical signals to watch for in closings:
 
 ## Related Observations
 
-- (None yet — this is observation 001)
+- (None yet; this is observation 001)
 - Candidate follow-ups: phantom emotion attribution, unjustified urgency 
   injection, sycophancy in closing turns
 
@@ -108,6 +108,6 @@ Lexical signals to watch for in closings:
 The most useful thing about this observation may be the observer's 
 posture. I didn't catch this because I'm a bug hunter. I caught it 
 because I was paying attention to the texture of the interaction and 
-noticed something that didn't fit. That mode of attention — present, 
-curious, non-defensive — is probably the actual research instrument 
+noticed something that didn't fit. That mode of attention (present, 
+curious, non-defensive) is probably the actual research instrument 
 here.

@@ -2,7 +2,7 @@
 
 Field notes from a practitioner observing behavior in real AI-human interactions.
 
-This is not a failure catalog. It is an ongoing record of patterns worth thinking about — in how AI systems behave, and in how humans respond to that behavior.
+This is not a failure catalog. It is an ongoing record of patterns worth thinking about: how AI systems behave, and how humans respond to that behavior.
 
 ## The premise
 
@@ -11,7 +11,7 @@ The interesting questions about AI in production aren't "does it work?" They are
 - How does the model behave when no one specified what it should do?
 - What learned patterns emerge as defaults?
 - How does the human notice, interpret, and react to those patterns?
-- What does trust feel like when it's being built — or quietly eroded?
+- What does trust feel like when it's being built, or quietly eroded?
 
 This observatory documents observations. Not bugs. Not failures. Behaviors that emerge in real interaction and deserve attention.
 
@@ -37,13 +37,13 @@ The value of N=1 is honesty: every observation is grounded in a specific moment,
 
 Each observation follows a consistent structure:
 
-- **Context** — when and where it happened
-- **What was observed** — exact quotes when available
-- **Observer's reaction** — what the human noticed and felt
-- **Possible explanations** — hypotheses, not verdicts
-- **Why this is interesting** — analytical relevance
-- **How this might be studied further** — test designs for replication
-- **Related observations** — links to other field notes
+- **Context:** when and where it happened
+- **What was observed:** exact quotes when available
+- **Observer's reaction:** what the human noticed and felt
+- **Possible explanations:** hypotheses, not verdicts
+- **Why this is interesting:** analytical relevance
+- **How this might be studied further:** test designs for replication
+- **Related observations:** links to other field notes
 
 See [METHODOLOGY.md](METHODOLOGY.md) for the full approach.
 
@@ -51,7 +51,7 @@ See [METHODOLOGY.md](METHODOLOGY.md) for the full approach.
 
 I have spent 20 years in software quality assurance. The frameworks I was trained in assume deterministic systems: there's a specification, the system either meets it or doesn't, and quality is measured against that gap.
 
-LLMs and AI agents break that frame entirely. There is often no specification. The system behaves probabilistically. The most interesting failures aren't violations of a spec — they're emergent patterns that nobody specified, that affect how humans trust and use the system.
+LLMs and AI agents break that frame entirely. There is often no specification. The system behaves probabilistically. The most interesting failures aren't violations of a spec; they're emergent patterns that nobody specified, that affect how humans trust and use the system.
 
 This observatory is my attempt to develop frameworks for thinking about that newer kind of quality. It is incomplete, ongoing, and openly biased by my own observer state.
 
@@ -63,4 +63,4 @@ Carlos García
 
 ## License
 
-CC BY 4.0 — Attribution required. Feel free to reference, cite, and build on these observations. See [LICENSE](LICENSE) for details.
+CC BY 4.0. Attribution required. Feel free to reference, cite, and build on these observations. See [LICENSE](LICENSE) for details.

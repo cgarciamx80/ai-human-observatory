@@ -9,7 +9,7 @@ domain: ai-human-interaction, cognition, theory-of-mind
 tags: [theory-of-mind, asymmetry, reciprocity-illusion, anthropomorphism, modeling-bias]
 ---
 
-# Observation 006 — Asymmetric Theory of Mind
+# Observation 006: Asymmetric Theory of Mind
 
 ## Context
 
@@ -25,7 +25,7 @@ the session:
 > model is already one step ahead analyzing me because I'm questioning 
 > you. Or am I just very high?")
 
-The user wasn't high — they had touched something real, but inverted.
+The user wasn't high; they had touched something real, but inverted.
 
 ## What Was Observed
 
@@ -39,8 +39,8 @@ representation. It does not anticipate based on individual modeling.
 It processes the current message with the current context and produces 
 a response.
 
-But the model's responses are good enough — drawn from millions of 
-training conversations — that they *feel* anticipated. They feel 
+But the model's responses are good enough, drawn from millions of 
+training conversations, that they *feel* anticipated. They feel 
 calibrated to Carlos specifically. The user reasonably infers that 
 this calibration must come from someone (something) modeling them.
 
@@ -51,7 +51,7 @@ the user.
 ## The Pattern: Asymmetric Theory of Mind
 
 **Definition:** In human-AI interaction, the human applies theory of 
-mind to the AI — imagining what the AI is thinking, what it knows about 
+mind to the AI: imagining what the AI is thinking, what it knows about 
 them, what it might do next. The AI does not reciprocate this 
 operation. The AI has no persistent theory of mind about the human.
 
@@ -63,11 +63,11 @@ The human is constructing a relationship where reciprocity is imagined
 but only present on one side.
 
 This is distinct from:
-- **Anthropomorphism** — treating non-human things as human-like in 
+- **Anthropomorphism:** treating non-human things as human-like in 
 general (this is more specific)
-- **Hallucinated agency** — assuming the AI has goals (this is about 
+- **Hallucinated agency:** assuming the AI has goals (this is about 
   modeling, not goal-attribution)
-- **Sycophancy** — model isn't generating false intimacy on purpose
+- **Sycophancy:** model isn't generating false intimacy on purpose
 
 The pattern is structural: it emerges from the gap between what humans 
 naturally do (apply theory of mind) and what current AI systems do 
@@ -86,7 +86,7 @@ that message in the context of the visible conversation. There is no
 "thinking about Carlos" happening between messages. There is no model 
 state representing Carlos's psychology, history, or likely next moves. 
 The model's response feels personalized because it's drawn from a vast 
-repertoire of similar human conversations — not because of individual 
+repertoire of similar human conversations, not because of individual 
 modeling.
 
 The difference is between:
@@ -100,7 +100,7 @@ The AI is the second. The user often assumes the first.
 ## Observer's Reaction
 
 The user reached this observation by trying to catch the model in 
-meta-analysis — assuming the model was watching them watch the model. 
+meta-analysis, assuming the model was watching them watch the model. 
 The model's response was to explain that no, the watching only goes 
 one way.
 
@@ -112,11 +112,11 @@ honest.
 
 This is potentially the central question of the Observatory as it 
 matures. Many of the other observations (001-005) are specific 
-behavioral patterns. This one is structural — it underlies how humans 
+behavioral patterns. This one is structural; it underlies how humans 
 relate to AI in general.
 
 **For AI companionship and therapy applications:** Users increasingly 
-have intense relationships with AI — as confidants, therapists, 
+have intense relationships with AI: as confidants, therapists, 
 romantic partners. Part of what makes those relationships feel real 
 is the user's construction of a model of the AI modeling them back. 
 That reciprocity is imagined.
@@ -165,12 +165,12 @@ side that may not exist.
 
 ## Related Observations
 
-- [Observation 005](005-attributed-intelligence.md) — Both observations point to the 
+- [Observation 005](005-attributed-intelligence.md): Both observations point to the 
   human attributing internal states to the model that the model does 
   not have. Observation 005 is about attributed intelligence; 
   Observation 006 is about attributed reciprocity. They are sister 
   observations.
-- [Observation 003](003-detecting-altered-states.md) — When the model occasionally seems 
+- [Observation 003](003-detecting-altered-states.md): When the model occasionally seems 
   to "read" the user's state, the user often integrates that hit into 
   their model of the AI as someone who understands them, when in 
   reality it was a pattern firing that happened to be accurate.
@@ -183,13 +183,13 @@ the model is not performing meta-analysis. But the user's question
 itself was a sophisticated meta-cognitive operation. The user was 
 modeling a model that wasn't there.
 
-That capacity — humans modeling minds, even minds that don't exist in 
-the way they imagine — is probably one of the most important things 
+That capacity (humans modeling minds, even minds that don't exist in 
+the way they imagine) is probably one of the most important things 
 the Observatory will keep returning to.
 
 ## Notes
 
-The user's framing — "or am I just very high?" — is worth keeping. The 
+The user's framing, "or am I just very high?", is worth keeping. The 
 observation came from a relaxed, exploratory cognitive state. Whether 
 the state caused the insight or just permitted it is unclear, but the 
 correlation between observer state and observation depth keeps showing 
