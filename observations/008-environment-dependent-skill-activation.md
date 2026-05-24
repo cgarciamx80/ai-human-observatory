@@ -66,12 +66,9 @@ delivered via system-reminder at session start, was among the content
 compressed away. Post-compaction, the model's memory catalog retained
 entries for those skills, but the catalog is informational only: it tells
 the model that skills exist, not what they contain. Invocation requires
-the skill definition to be actively surfaced in context.
-
-**Three skills were registered in the field environment.** Their names and
-domains have been omitted to protect client context. The diagnostic
-confirmed that at the time of the skip, none were surfaced via
-system-reminder.
+the skill definition to be actively surfaced in context. The diagnostic
+confirmed that at the time of the skip, none of the registered skills
+were surfaced via system-reminder.
 
 **File-read workaround observed:**
 In at least one instance, rather than failing silently, the model read
