@@ -1,12 +1,12 @@
 ---
 observation_id: 008
 type: observation
-status: preliminary — pending work-machine evidence
+status: documented — mechanism identified
 date: 2026-05-23
 observer: Carlos García
-source: Cross-environment comparison (personal machine + work machine, Claude Code)
+source: Cross-environment comparison (personal machine + work machine, Claude Code) + in-session diagnostic
 domain: ai-human-interaction, ai-collaboration, qa-ai-assisted
-tags: [skill-activation, environment-dependence, partial-compliance, qa-reliability, reproducibility]
+tags: [skill-activation, environment-dependence, partial-compliance, qa-reliability, reproducibility, context-compaction]
 ---
 
 # Observation 008: Environment-Dependent Skill Activation
@@ -19,7 +19,7 @@ arrives. The observer has been using Skills in two distinct environments:
 
 - **Personal machine:** Controlled sessions. Working directory set explicitly
   to the experiment folder. Clean sessions per run.
-- **Work machine (Instructure):** Real working sessions. Accumulated context.
+- **Work machine:** Real working sessions. Accumulated context.
   Multiple concurrent tasks. No explicit session management between uses.
 
 Controlled experiment data exists for the personal machine environment:
@@ -48,10 +48,53 @@ skips in the controlled personal-machine environment. The controlled
 environment shows near-perfect activation. The uncontrolled real environment
 shows intermittent failure.
 
-**Status:** Full skip and partial compliance instances have been observed
-repeatedly but not yet formally documented with timestamps and diagnostic
-data. This observation is preliminary pending structured evidence collection
-on the work machine.
+After observing a skip during a real working session, the observer ran a
+structured diagnostic prompt to capture what the model could report about
+its own skill environment. The response identified specific mechanisms.
+
+## Diagnostic Evidence
+
+Following a skip instance on the work machine, the observer ran a diagnostic
+prompt designed to surface self-reported information about the model's current
+skill environment without exposing client or project context. The model's
+response identified the following:
+
+**Skills visible at session start, then lost to compaction:**
+At the beginning of the session, multiple registered skills were surfaced
+in the system-reminder and were fully invocable. As the session grew longer,
+context compaction collapsed the conversation history. The skills list —
+delivered via system-reminder at session start — was among the content
+compressed away. Post-compaction, the model's memory catalog retained
+entries for those skills, but the catalog is informational only: it tells
+the model that skills exist, not what they contain. Invocation requires
+the skill definition to be actively surfaced in context.
+
+**Three skills were registered on the work machine.** Their names and
+domains have been omitted to protect client context. The diagnostic
+confirmed that at the time of the skip, none were surfaced via
+system-reminder.
+
+**File-read workaround observed:**
+In at least one instance, rather than failing silently, the model read
+the skill's `.md` file directly from the `.claude/skills/` directory.
+This produced output that followed the skill's structure without the
+skill being formally invoked via the Skill tool. This explains partial
+compliance outputs: the content is present, but the invocation mechanism
+was bypassed.
+
+**Implicit trigger threshold:**
+The model reported that tactical sub-questions embedded within ongoing
+workflows — "do X given the context we've been building" — don't reliably
+meet the gate for auto-invocation. Isolated, clearly-scoped prompts
+activate more reliably than prompts that arrive as continuation of
+an extended exchange.
+
+**Additional conditions identified:**
+- Skill defined as non-user-invocable in frontmatter — model cannot call it
+- Plan Mode active — skill invocation may be restricted
+- User instruction elsewhere in context that overrides skill behavior
+- Skill name or slug mismatch between memory catalog and file path — fails silently
+- Permission scope gaps between skill definition and current session context
 
 ## Why This Has Two Implications
 
@@ -59,8 +102,8 @@ on the work machine.
 
 Skill activation is not a deterministic function of the prompt alone.
 The environment — session state, working directory, accumulated context,
-possibly model version — appears to influence whether a registered skill
-fires. This means:
+compaction state, possibly model version — appears to influence whether
+a registered skill fires. This means:
 
 - Controlled experiments on skill behavior may not generalize to
   production conditions.
@@ -69,6 +112,9 @@ fires. This means:
 - The interesting variable is not "does the skill activate given prompt X"
   but "under what environmental conditions does skill activation become
   unreliable?"
+- Context compaction is a specific, testable mechanism: activation
+  reliability is expected to degrade after the compaction threshold
+  is crossed, independent of prompt quality.
 
 ### 2. AI-assisted QA angle
 
@@ -82,41 +128,59 @@ This is a QA reliability problem embedded in the AI layer: the tool
 behaves differently in production than in testing. A pattern familiar
 to any QA engineer, now appearing in the AI assistant itself.
 
+The file-read workaround adds a second layer: the output may look partially
+correct while the invocation mechanism was never triggered. Standard
+output checks will not catch this. Detecting true skill invocation requires
+checking for invocation markers, not just output structure.
+
 ## Possible Explanations
 
-1. **Working directory mismatch:** Skills load relative to the working
+1. **Context compaction (primary):** Skills load into context via
+   system-reminder at session start. When context is compacted in a long
+   session, that system-reminder is compressed away. The model retains
+   a memory catalog entry but cannot invoke a skill it cannot see.
+   The longer the session, the higher the probability of compaction,
+   and the higher the probability of activation failure.
+
+2. **Working directory mismatch:** Skills load relative to the working
    directory. If the work machine session is not anchored to the folder
    containing the `.claude/skills/` directory, the skill is invisible
    to the model regardless of prompt.
 
-2. **Context interference at scale:** The work machine has longer,
-   denser sessions with more accumulated context. The noise-condition
-   results from Experiment 001 (5 prior prompts) may underestimate the
-   interference effect at real-world session scale (20-50+ prior exchanges).
+3. **Implicit trigger threshold:** Prompts embedded in long, accumulated
+   context don't activate skills as reliably as clean, isolated prompts.
+   The noise-condition results from Experiment 001 (5 prior prompts) may
+   underestimate the interference effect at real-world session scale
+   (20-50+ prior exchanges).
 
-3. **Model version drift:** Claude Code may serve different model versions
+4. **Model version drift:** Claude Code may serve different model versions
    across machines or across time. If the work machine is running a
    different version, activation behavior may differ independently of
    session conditions.
 
-4. **Skill definition visibility:** If the skill file is not in the
-   expected path relative to the active working directory, the model
-   never sees the definition and cannot invoke what it does not know exists.
+5. **Silent configuration failures:** Slug mismatches, permission gaps,
+   or non-user-invocable flags can suppress activation without any
+   visible error or acknowledgment from the model.
 
 ## How This Might Be Studied Further
 
-**Immediate diagnostic (work machine):** After observing a skip, run
-the diagnostic prompt below to capture what the model sees about its
-own skill environment without exposing project content.
+**Compaction threshold test:** Run identical prompt sequences of increasing
+length and measure at what session length skill activation begins to degrade.
+If activation drops after a consistent number of exchanges, compaction is
+the causal mechanism.
+
+**Invocation marker audit:** After any skill-dependent output, verify the
+presence of invocation markers rather than output structure alone. Structure
+can be reproduced via file-read; the marker requires true invocation.
 
 **Structured replication:** Run Experiment 001 conditions on the work
 machine. Compare activation rates across identical conditions in both
-environments. If personal machine = ~100% and work machine = lower,
+environments. If personal machine is at ~100% and work machine is lower,
 the gap is the finding.
 
 **Variable isolation:** Test each candidate explanation independently:
 - Verify working directory before each run
-- Control for session length
+- Control for session length and compaction state
 - Log model version across runs
 
 ## Related Observations
@@ -136,5 +200,7 @@ LLM behavioral research and QA engineering. The environment-dependence
 pattern is immediately legible to any QA professional who has seen a
 test pass in staging and fail in production. The framing transfers.
 
-Evidence collection on the work machine is the next required step before
-this observation can be marked as fully documented.
+The diagnostic prompt approach — asking the model to report on its own
+skill environment after observing a skip — is itself a method worth
+documenting. It produced specific, actionable hypotheses without requiring
+access to internal model state.
