@@ -32,6 +32,7 @@ The value of N=1 is honesty: every observation is grounded in a specific moment,
 | [005](observations/005-attributed-intelligence.md) | Attributed intelligence (mirror effect) | attribution, mirror-effect, observer-cognition |
 | [006](observations/006-asymmetric-theory-of-mind.md) | Asymmetric theory of mind | theory-of-mind, asymmetry, reciprocity-illusion |
 | [007](observations/007-silent-content-adaptation.md) | Silent content adaptation | silent-adaptation, editorial-decisions, content-integrity |
+| [008](observations/008-environment-dependent-skill-activation.md) | Environment-dependent skill activation | skill-activation, environment-dependence, qa-reliability, reproducibility |
 
 ## Methodology
 
