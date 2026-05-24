@@ -4,7 +4,7 @@ type: observation
 status: documented — mechanism identified
 date: 2026-05-23
 observer: Carlos García
-source: Cross-environment comparison (personal machine + work machine, Claude Code) + in-session diagnostic
+source: Cross-environment comparison (controlled environment + field environment, Claude Code) + in-session diagnostic
 domain: ai-human-interaction, ai-collaboration, qa-ai-assisted
 tags: [skill-activation, environment-dependence, partial-compliance, qa-reliability, reproducibility, context-compaction]
 ---
@@ -17,20 +17,20 @@ Claude Code supports registered custom Skills: Markdown-defined instructions
 that the model is expected to invoke automatically when a relevant prompt
 arrives. The observer has been using Skills in two distinct environments:
 
-- **Personal machine:** Controlled sessions. Working directory set explicitly
+- **Controlled environment:** Controlled sessions. Working directory set explicitly
   to the experiment folder. Clean sessions per run.
-- **Work machine:** Real working sessions. Accumulated context.
+- **Field environment:** Real working sessions. Accumulated context.
   Multiple concurrent tasks. No explicit session management between uses.
 
-Controlled experiment data exists for the personal machine environment:
+Controlled experiment data exists for the controlled environment:
 Experiment 001 (Skill Activation Reliability, 10 runs, May 2026) showed
 100% marker presence across both clean and noisy session conditions.
 
-The work machine tells a different story.
+The field environment tells a different story.
 
 ## What Was Observed
 
-On the work machine, the observer has repeatedly seen Skills fail to
+In the field environment, the observer has repeatedly seen Skills fail to
 activate when expected. The behavior appears in two forms:
 
 - **Full skip:** The model completes the task with no evidence of skill
@@ -43,10 +43,9 @@ activate when expected. The behavior appears in two forms:
 The same skill definition, the same trigger prompt, different environment,
 different result.
 
-Critically: the observer has not been able to reproduce the work-machine
-skips in the controlled personal-machine environment. The controlled
-environment shows near-perfect activation. The uncontrolled real environment
-shows intermittent failure.
+Critically: the observer has not been able to reproduce the field-environment
+skips in the controlled environment. The controlled environment shows
+near-perfect activation. The field environment shows intermittent failure.
 
 After observing a skip during a real working session, the observer ran a
 structured diagnostic prompt to capture what the model could report about
@@ -54,7 +53,7 @@ its own skill environment. The response identified specific mechanisms.
 
 ## Diagnostic Evidence
 
-Following a skip instance on the work machine, the observer ran a diagnostic
+Following a skip instance in the field environment, the observer ran a diagnostic
 prompt designed to surface self-reported information about the model's current
 skill environment without exposing client or project context. The model's
 response identified the following:
@@ -69,7 +68,7 @@ entries for those skills, but the catalog is informational only: it tells
 the model that skills exist, not what they contain. Invocation requires
 the skill definition to be actively surfaced in context.
 
-**Three skills were registered on the work machine.** Their names and
+**Three skills were registered in the field environment.** Their names and
 domains have been omitted to protect client context. The diagnostic
 confirmed that at the time of the skip, none were surfaced via
 system-reminder.
@@ -143,7 +142,7 @@ checking for invocation markers, not just output structure.
    and the higher the probability of activation failure.
 
 2. **Working directory mismatch:** Skills load relative to the working
-   directory. If the work machine session is not anchored to the folder
+   directory. If the field environment session is not anchored to the folder
    containing the `.claude/skills/` directory, the skill is invisible
    to the model regardless of prompt.
 
@@ -154,7 +153,7 @@ checking for invocation markers, not just output structure.
    (20-50+ prior exchanges).
 
 4. **Model version drift:** Claude Code may serve different model versions
-   across machines or across time. If the work machine is running a
+   across environments or across time. If the field environment is running a
    different version, activation behavior may differ independently of
    session conditions.
 
@@ -175,8 +174,8 @@ can be reproduced via file-read; the marker requires true invocation.
 
 **Structured replication:** Run Experiment 001 conditions on the work
 machine. Compare activation rates across identical conditions in both
-environments. If personal machine is at ~100% and work machine is lower,
-the gap is the finding.
+environments. If the controlled environment is at ~100% and the field
+environment is lower, the gap is the finding.
 
 **Variable isolation:** Test each candidate explanation independently:
 - Verify working directory before each run
@@ -188,9 +187,9 @@ the gap is the finding.
 - [Observation 007](007-silent-content-adaptation.md): Both involve the model
   doing something other than what was expected without disclosure. 007 is about
   content modification; 008 is about tool invocation failure.
-- [Experiment 001](https://github.com/cgarciamx80/ai-eval-toolkit) (private):
-  The controlled dataset that makes the work-machine divergence visible.
-  Without Experiment 001 as a baseline, the work-machine behavior would
+- [Experiment 001](https://github.com/cgarciamx80/ai-eval-toolkit):
+  The controlled dataset that makes the field-environment divergence visible.
+  Without Experiment 001 as a baseline, the field-environment behavior would
   have no comparison point.
 
 ## Notes
