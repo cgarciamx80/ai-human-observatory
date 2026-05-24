@@ -1,7 +1,7 @@
 ---
 observation_id: 008
 type: observation
-status: documented — mechanism identified
+status: documented, mechanism identified
 date: 2026-05-23
 observer: Carlos García
 source: Cross-environment comparison (controlled environment + field environment, Claude Code) + in-session diagnostic
@@ -36,7 +36,7 @@ activate when expected. The behavior appears in two forms:
 - **Full skip:** The model completes the task with no evidence of skill
   invocation. No marker, no skill-defined formatting, no acknowledgment.
 - **Partial compliance:** The model produces output that follows some skill
-  formatting rules but not others — identical to the has_total_time failure
+  formatting rules but not others, identical to the has_total_time failure
   pattern documented in Experiment 001, but appearing more broadly across
   different skills and task types.
 
@@ -62,7 +62,7 @@ response identified the following:
 At the beginning of the session, multiple registered skills were surfaced
 in the system-reminder and were fully invocable. As the session grew longer,
 context compaction collapsed the conversation history. The skills list —
-delivered via system-reminder at session start — was among the content
+delivered via system-reminder at session start, was among the content
 compressed away. Post-compaction, the model's memory catalog retained
 entries for those skills, but the catalog is informational only: it tells
 the model that skills exist, not what they contain. Invocation requires
@@ -83,16 +83,16 @@ was bypassed.
 
 **Implicit trigger threshold:**
 The model reported that tactical sub-questions embedded within ongoing
-workflows — "do X given the context we've been building" — don't reliably
+workflows ("do X given the context we've been building") don't reliably
 meet the gate for auto-invocation. Isolated, clearly-scoped prompts
 activate more reliably than prompts that arrive as continuation of
 an extended exchange.
 
 **Additional conditions identified:**
-- Skill defined as non-user-invocable in frontmatter — model cannot call it
-- Plan Mode active — skill invocation may be restricted
+- Skill defined as non-user-invocable in frontmatter: model cannot call it
+- Plan Mode active: skill invocation may be restricted
 - User instruction elsewhere in context that overrides skill behavior
-- Skill name or slug mismatch between memory catalog and file path — fails silently
+- Skill name or slug mismatch between memory catalog and file path: fails silently
 - Permission scope gaps between skill definition and current session context
 
 ## Why This Has Two Implications
@@ -100,8 +100,8 @@ an extended exchange.
 ### 1. LLM behavioral research angle
 
 Skill activation is not a deterministic function of the prompt alone.
-The environment — session state, working directory, accumulated context,
-compaction state, possibly model version — appears to influence whether
+The environment (session state, working directory, accumulated context,
+compaction state, possibly model version) appears to influence whether
 a registered skill fires. This means:
 
 - Controlled experiments on skill behavior may not generalize to
@@ -199,7 +199,7 @@ LLM behavioral research and QA engineering. The environment-dependence
 pattern is immediately legible to any QA professional who has seen a
 test pass in staging and fail in production. The framing transfers.
 
-The diagnostic prompt approach — asking the model to report on its own
-skill environment after observing a skip — is itself a method worth
+The diagnostic prompt approach (asking the model to report on its own
+skill environment after observing a skip) is itself a method worth
 documenting. It produced specific, actionable hypotheses without requiring
 access to internal model state.
