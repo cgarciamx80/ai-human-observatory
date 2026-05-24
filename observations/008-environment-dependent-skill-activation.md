@@ -55,8 +55,7 @@ its own skill environment. The response identified specific mechanisms.
 
 Following a skip instance in the field environment, the observer ran a diagnostic
 prompt designed to surface self-reported information about the model's current
-skill environment without exposing client or project context. The model's
-response identified the following:
+skill environment. The model's response identified the following:
 
 **Skills visible at session start, then lost to compaction:**
 At the beginning of the session, multiple registered skills were surfaced
