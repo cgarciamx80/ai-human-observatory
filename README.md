@@ -33,6 +33,7 @@ The value of N=1 is honesty: every observation is grounded in a specific moment,
 | [006](observations/006-asymmetric-theory-of-mind.md) | Asymmetric theory of mind | theory-of-mind, asymmetry, reciprocity-illusion |
 | [007](observations/007-silent-content-adaptation.md) | Silent content adaptation | silent-adaptation, editorial-decisions, content-integrity |
 | [008](observations/008-environment-dependent-skill-activation.md) | Environment-dependent skill activation | skill-activation, environment-dependence, qa-reliability, reproducibility |
+| [009](observations/009-symmetric-expansion-behaviors.md) | Symmetric expansion behaviors | expansion-behavior, behavioral-symmetry, conversational-dynamics, meta-observation |
 
 ## Methodology
 
